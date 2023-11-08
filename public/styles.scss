@@ -1,0 +1,280 @@
+//styles.scss
+$custom-green: #B5CC22; 
+$custom-darkGreen: #677510;
+$custom-grey: #F2F2F2;
+
+* {
+  box-sizing: border-box;
+}
+/* 手機樣式 */
+@media (max-width: 600px) {
+  /*
+  .navClass {
+    font-size: 24px;
+  }
+  #nav {
+    height: 100vh !important;
+    display: flex;
+    flex-direction: column ; 
+    align-items: flex-start !important; 
+    border: 2px solid blue;
+  }
+  #logo {
+    margin-left: 10vw !important;
+  }
+  #navSection {
+    display: flex;
+    flex-direction: column ; 
+    align-items: flex-start !important; 
+    width: 100vw !important ;
+    height: 90vh;
+  }
+  .navDiv {
+    margin-left: 10vw !important;
+  }
+  #login {
+    margin-left: 14vw !important;
+  }
+  #checkbox-panel {
+    min-width: 358px;
+  }
+*/
+}
+
+/* 電腦版樣式 */  
+@media (min-width: 600px)  {
+  
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#nav {
+  height: 10vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+#navSection {
+  border: 2px solid red;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+hr.new1 {
+  margin: 0;
+}
+
+#station-text {
+  text-decoration: none;
+  color: $custom-green;
+  font-weight: bold;
+}
+
+#logo {
+  margin-left: 5%;
+}
+
+#logo img {
+  /* https://i.imgur.com/QAbUlXP.png */
+  width: 80px;
+  height: 80px;
+}
+
+.navClass {
+  color: $custom-darkGreen;
+  background-color: transparent !important; // avoid .active page setting
+  border: none !important;  // avoid .active page setting
+  text-decoration: none;
+  font-weight: bold;
+  min-width: 100px;
+  
+}
+
+#station {
+  color: $custom-green;
+}
+
+#login {
+  margin-left: 15%;
+  margin-right: 10%;
+  background: $custom-green;
+  border-radius: 50px;
+}
+
+#login-text {
+  color: white;
+}
+
+.btn {
+  border-radius: 50px;
+}
+
+#fieldset {
+  height: 700px;
+  margin-top: -2.5vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+#legend, #search-panel,#mid-panel {
+  width: 100%;
+  margin-left: 5%;
+}
+
+#search-panel {
+  display: flex;
+}
+
+.option {
+  font-weight: bold;
+}
+
+#stationSelect {
+  height: 7vh;
+  width: 15vw;
+  font-weight: bold;
+}
+
+#stationSearch {
+  margin-left: 30px;
+  height: 7vh;
+  width: 20vw;
+}
+
+#search, #stationSelect {
+  background-color: #F0F0F0;
+}
+
+#button {
+  width: 4vw;
+}
+
+#magnifier {
+  margin-left: 0.1vw;
+}
+
+#legend {
+  color: $custom-green;
+  font-weight: bold;
+  margin-top: 3vh;
+}
+
+select {
+  font-weight: bold;
+}
+
+#checkboxAll {
+  margin-left: 5%;
+}
+
+#checkbox-panel {
+  width: 47%;
+  min-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#checkbox-panel input, label {
+  flex-basis: 12.5%;
+}
+
+#checkbox-panel label {
+  font-size: 0.9em;
+}
+
+.fa-magnifying-glass {
+  margin-left: -20px;
+}
+
+#mid-panel {
+  width: 100%;
+  line-height: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#checkbox-panel input {
+  accent-color: $custom-green;
+}
+
+
+#mid-panel img {
+  width: 30%;
+  height: auto;
+  margin-left: 5%;
+}
+
+tr, .scity  {
+  text-align: center;
+}
+
+.sbi, .bemp {
+  color: $custom-green !important;
+}
+
+.table-custom-green {
+  background-color: $custom-green  !important;
+  color: white !important;
+}
+
+#divTable {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  width: 90vw;
+  height:300px;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.table table-striped {
+  border-collapse: collapse;
+}
+
+span {
+  color: blue;
+  text-decoration: underline;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+.sna {
+  padding-left: 50px !important;
+  text-align: left;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.page, .active, .dot {
+  margin-right: 5px;
+  text-decoration: none;
+  color: #3C3C3C;
+}
+
+.page, .active {
+  border: 2.5px solid #E1E100;
+}
+
+.active {
+  background-color: #E1E100;
+}
+
+.page:hover {
+  background-color: #E1E100;
+}

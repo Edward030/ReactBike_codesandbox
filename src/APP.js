@@ -1,7 +1,8 @@
 //APP.js
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 //import App from './App'; // 假设您的主应用程序位于App.js中
 
 const fetchData = async () => {

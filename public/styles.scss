@@ -98,7 +98,6 @@ hr.new1 {
   text-decoration: none;
   font-weight: bold;
   min-width: 100px;
-  
 }
 
 #station {
@@ -116,9 +115,7 @@ hr.new1 {
   color: white;
 }
 
-.btn {
-  border-radius: 50px;
-}
+
 
 #fieldset {
   height: 700px;
@@ -150,7 +147,7 @@ hr.new1 {
 #stationSearch {
   margin-left: 30px;
   height: 7vh;
-  width: 20vw;
+  width: 30vw;
 }
 
 #search, #stationSelect {
@@ -159,6 +156,9 @@ hr.new1 {
 
 #button {
   width: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #magnifier {
@@ -195,9 +195,7 @@ select {
   font-size: 0.9em;
 }
 
-.fa-magnifying-glass {
-  margin-left: -20px;
-}
+
 
 #mid-panel {
   width: 100%;

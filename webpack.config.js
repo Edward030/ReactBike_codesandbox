@@ -26,13 +26,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
           // 将 JS 字符串转换为 style 节点
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           // 将 CSS 转化成 CommonJS
           'css-loader',
           // 编译 Sass 文件
@@ -52,4 +52,8 @@ module.exports = {
       filename: './public/styles.scss',
     }),
   ],
+  devServer: {
+		port: 3000,
+    historyApiFallback: true,
+	},
 };

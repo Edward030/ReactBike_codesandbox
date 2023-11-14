@@ -1,8 +1,15 @@
 //APP.js
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../public/styles.scss';
+//import '@fortawesome/fontawesome-free/css/all.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 //import App from './App'; // 假设您的主应用程序位于App.js中
+
+
 
 const fetchData = async () => {
   const response = await fetch('https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json');
@@ -20,10 +27,25 @@ const checkbox_arr = [
 ];
 
 const APP = () => {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 600);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
   return (
     <>
-      <Nav/>
-      {/*window.innerWidth > 600 ? <Nav /> : <MobileNav /> */}
+      <Router>
+        {isMobile ? <MobileNav /> : <Nav />}
+      </Router>
     </>
   );
 };
@@ -32,44 +54,50 @@ function MobileNav () {
   return (
     <>
       <div id="mobNav">
-        <div id="mobLogo" ><img src="https://i.imgur.com/QAbUlXP.png" alt="logo"/></div>
+        <div id="mobLogoSection">
+          <img src="https://i.imgur.com/QAbUlXP.png" alt="logo" id="mobLogo" />
+        </div>
         <div id="mobNavSection">
-          <div className="mobNavDiv"><Link to="/instructions" className="navClass" id="instruction">使用說明</Link></div>
-          <div className="mobNavDiv"><Link to="/charge" className="navClass" id="charge">收費方式</Link></div>
-          <div className="mobNavDiv"><Link to="/station" className="navClass" id="station">站點資訊</Link></div>
-          <div className="mobNavDiv"><Link to="/news" className="navClass" id="news">最新消息</Link></div>
-          <div className="mobNavDiv"><Link to="/activity" className="navClass">活動專區</Link></div>
-          <div id="login"><Link to="/login" className="btn" id="login-text">登入</Link>       </div>
+          <div className="mobNavDiv">
+            <Link to="/instructions" className="mobNavClass" id="instruction">
+              使用說明
+            </Link>
+          </div>
+          <div className="mobNavDiv">
+            <Link to="/charge" className="mobNavClass" id="charge">
+              收費方式
+            </Link>
+          </div>
+          <div className="mobNavDiv">
+            <Link to="/station" className="mobNavClass" id="mobStation">
+              站點資訊
+            </Link>
+          </div>
+          <div className="mobNavDiv">
+            <Link to="/news" className="mobNavClass" id="news">
+              最新消息
+            </Link>
+          </div>
+          <div className="mobNavDiv">
+            <Link to="/activity" className="mobNavClass">
+              活動專區
+            </Link>
+          </div>
+          <div id="mobLogin">
+            <Link to="/login" className="btn" id="login-text">
+              登入
+            </Link>{' '}
+          </div>
         </div>
-          {/*
-          <div id="instruction">使用說明</div>
-          <div id="charge">收費方式</div>
-          <div id="station">站點資訊</div>
-          <div id="news">最新消息</div>
-          <div id="activity">活動專區</div>
-          <div id="login" className="btn"><div id="login-text">登入</div></div>
-          */}
-        </div>
-          <Routes>
-            <Route path="/instructions" element={<div>News</div>}/>
-            <Route path="/charge" element={<div>News</div>}/>
-            <Route path="/station" >
-              <StationPage/>
-            </Route>
-            <Route path="/news" element={<div>News</div>}/>
-            <Route path="/activity" element={<div>News</div>}/>
-            <Route path="/login" element={<div>News</div>}/>
-          </Routes>
-        {/*
-        <Switch>
-          <Route path="/instructions" element={<div>News</div>}/>
-          <Route path="/charge" element={<div>News</div>}/>
-          <Route path="/station" element={<StationPage/>}/>
-          <Route path="/news" element={<div>News</div>}/>
-          <Route path="/activity" element={<div>News</div>}/>
-          <Route path="/login" element={<div>News</div>}/>
-        </Switch>
-        */}
+      </div>
+      <Routes>
+        <Route path="/instructions" element={<div>News</div>} />
+        <Route path="/charge" element={<div>News</div>} />
+        <Route path="/station" element={<StationPage />} />
+        <Route path="/news" element={<div>News</div>} />
+        <Route path="/activity" element={<div>News</div>} />
+        <Route path="/login" element={<div>News</div>} />
+      </Routes>
     </>
   );
 }
@@ -87,35 +115,15 @@ function Nav () {
           <div className="navDiv"><Link to="/activity" className="navClass">活動專區</Link></div>
           <div id="login"><Link to="/login" className="btn" id="login-text">登入</Link>       </div>
         </div>
-          {/*
-          <div id="instruction">使用說明</div>
-          <div id="charge">收費方式</div>
-          <div id="station">站點資訊</div>
-          <div id="news">最新消息</div>
-          <div id="activity">活動專區</div>
-          <div id="login" className="btn"><div id="login-text">登入</div></div>
-          */}
         </div>
-          <Switch>
+          <Routes>
             <Route path="/instructions" element={<div>News</div>}/>
             <Route path="/charge" element={<div>News</div>}/>
-            <Route path="/station" >
-              <StationPage/>
-            </Route>
+            <Route path="/station" element={<StationPage/>}/>
             <Route path="/news" element={<div>News</div>}/>
             <Route path="/activity" element={<div>News</div>}/>
             <Route path="/login" element={<div>News</div>}/>
-          </Switch>
-        {/*
-        <Switch>
-          <Route path="/instructions" element={<div>News</div>}/>
-          <Route path="/charge" element={<div>News</div>}/>
-          <Route path="/station" element={<StationPage/>}/>
-          <Route path="/news" element={<div>News</div>}/>
-          <Route path="/activity" element={<div>News</div>}/>
-          <Route path="/login" element={<div>News</div>}/>
-        </Switch>
-        */}
+          </Routes>
     </>
   );
 }
@@ -245,7 +253,9 @@ function StationPage () {
             </select>
             <div class="input-group mb-3" id="stationSearch">
               <input type="text" class="form-control" id="search" value={search} onChange={handleChange} placeholder="搜尋站點" aria-label="Recipient's username" aria-describedby="button-addon2"/>
-              <button type="button" class="btn btn-outline-secondary" id="button" onClick={handleSubmit}><i class="fa-solid fa-magnifying-glass" id="magnifier"></i></button>
+              <button type="button" class="btn btn-outline-secondary" id="button" onClick={handleSubmit}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} id="magnifier"/>
+              </button>
             </div>
           </div>
           {/*

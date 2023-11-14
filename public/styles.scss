@@ -1,4 +1,6 @@
 //styles.scss
+@import '~bootstrap/scss/bootstrap.scss';
+
 $custom-green: #B5CC22; 
 $custom-darkGreen: #677510;
 $custom-grey: #F2F2F2;
@@ -8,37 +10,7 @@ $custom-grey: #F2F2F2;
 }
 /* 手機樣式 */
 @media (max-width: 600px) {
-  /*
-  .navClass {
-    font-size: 24px;
-  }
-  #nav {
-    height: 100vh !important;
-    display: flex;
-    flex-direction: column ; 
-    align-items: flex-start !important; 
-    border: 2px solid blue;
-  }
-  #logo {
-    margin-left: 10vw !important;
-  }
-  #navSection {
-    display: flex;
-    flex-direction: column ; 
-    align-items: flex-start !important; 
-    width: 100vw !important ;
-    height: 90vh;
-  }
-  .navDiv {
-    margin-left: 10vw !important;
-  }
-  #login {
-    margin-left: 14vw !important;
-  }
-  #checkbox-panel {
-    min-width: 358px;
-  }
-*/
+
 }
 
 /* 電腦版樣式 */  
@@ -96,7 +68,6 @@ hr.new1 {
   text-decoration: none;
   font-weight: bold;
   min-width: 100px;
-  
 }
 
 #station {
@@ -114,9 +85,7 @@ hr.new1 {
   color: white;
 }
 
-.btn {
-  border-radius: 50px;
-}
+
 
 #fieldset {
   height: 700px;
@@ -148,7 +117,7 @@ hr.new1 {
 #stationSearch {
   margin-left: 30px;
   height: 7vh;
-  width: 20vw;
+  width: 30vw;
 }
 
 #search, #stationSelect {
@@ -157,6 +126,9 @@ hr.new1 {
 
 #button {
   width: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #magnifier {
@@ -193,9 +165,7 @@ select {
   font-size: 0.9em;
 }
 
-.fa-magnifying-glass {
-  margin-left: -20px;
-}
+
 
 #mid-panel {
   width: 100%;
@@ -278,3 +248,48 @@ span:hover {
 .page:hover {
   background-color: #E1E100;
 }
+
+//Mobile style
+
+#mobLogoSection {
+  height: 10vh;
+  weight: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+#mobLogo {
+  padding-left: 10vw;
+}
+
+#mobNavSection {
+  height: 90vh;
+  weight: 100vw;
+  background-color: $custom-green;  
+}
+
+.mobNavDiv {
+  padding-left: 10vw;
+  padding-top: 5vh;
+}
+
+.mobNavClass {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 1.3rem;
+}
+
+#mobLogin {
+  padding-left: 10vw;
+  padding-top: 32vh;
+}
+
+#login-text {
+  text-decoration: none;
+  background-color: white;
+  color: $custom-darkGreen;
+  border-radius: 50px; 
+}
+
+// 第一層router是打開/關閉選單，第二層是選哪一個page

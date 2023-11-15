@@ -10,12 +10,38 @@ $custom-grey: #F2F2F2;
 }
 /* 手機樣式 */
 @media (max-width: 600px) {
+  #stationPic {
+    display: none;
+  }
 
+  #search-panel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #stationSelect, #stationSearch {
+    width: 80vw;
+  }
+
+  #stationSelect {
+    margin-bottom: 1vh;
+  }
 }
 
 /* 電腦版樣式 */  
 @media (min-width: 600px)  {
+  #stationSelect {
+    width: 100px;
+  }
+
+  #stationSearch {
+      margin-left: 30px;
+      width: 350px;
+    }
   
+  #sname {
+    padding-left: 50px ;
+  }
 }
 
 body, html {
@@ -34,7 +60,6 @@ body, html {
 }
 
 #navSection {
-  border: 2px solid red;
   width: 80vw;
   display: flex;
   justify-content: space-between;
@@ -88,8 +113,6 @@ hr.new1 {
 
 
 #fieldset {
-  height: 700px;
-  margin-top: -2.5vh;
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
@@ -109,15 +132,12 @@ hr.new1 {
 }
 
 #stationSelect {
-  height: 7vh;
-  width: 15vw;
+  height: 6vh;
   font-weight: bold;
 }
 
 #stationSearch {
-  margin-left: 30px;
-  height: 7vh;
-  width: 30vw;
+  height: 6vh;
 }
 
 #search, #stationSelect {
@@ -138,7 +158,7 @@ hr.new1 {
 #legend {
   color: $custom-green;
   font-weight: bold;
-  margin-top: 3vh;
+  
 }
 
 select {
@@ -147,6 +167,10 @@ select {
 
 #checkboxAll {
   margin-left: 5%;
+}
+
+#checkboxAllText {
+  width: 100px;
 }
 
 #checkbox-panel {
@@ -172,6 +196,7 @@ select {
   line-height: 2;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 3vh;
 }
 
 #checkbox-panel input {
@@ -185,12 +210,22 @@ select {
   margin-left: 5%;
 }
 
-tr, .scity  {
+tr {
   text-align: center;
+  vertical-align: middle;
+}
+
+.scity,.sarea {
+  min-width: 70px;
+}
+
+.sna {
+  text-align: left;
 }
 
 .sbi, .bemp {
   color: $custom-green !important;
+  font-weight: bold;
 }
 
 .table-custom-green {
@@ -201,13 +236,10 @@ tr, .scity  {
 #divTable {
   margin-left: 5vw;
   margin-right: 5vw;
-  width: 90vw;
-  height:300px;
   border-radius: 1em;
-  overflow: hidden;
 }
 
-.table table-striped {
+.table-striped {
   border-collapse: collapse;
 }
 
@@ -220,10 +252,7 @@ span:hover {
   cursor: pointer;
 }
 
-.sna {
-  padding-left: 50px !important;
-  text-align: left;
-}
+
 
 .pagination {
   display: flex;
@@ -253,18 +282,28 @@ span:hover {
 
 #mobLogoSection {
   height: 10vh;
-  weight: 100vw;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 #mobLogo {
-  padding-left: 10vw;
+  margin-left: 10vw;
+}
+
+.mobBar {
+  margin-right: 10vw;
+  height: 3vh;
+  width: 3vh;
+  color: $custom-darkGreen;
+}
+
+.mobBar:hover {
+  cursor: pointer;
 }
 
 #mobNavSection {
   height: 90vh;
-  weight: 100vw;
   background-color: $custom-green;  
 }
 
@@ -280,6 +319,11 @@ span:hover {
   font-size: 1.3rem;
 }
 
+.activeRoute {
+  text-decoration: none;
+  color: $custom-darkGreen ;
+}
+
 #mobLogin {
   padding-left: 10vw;
   padding-top: 32vh;
@@ -291,5 +335,7 @@ span:hover {
   color: $custom-darkGreen;
   border-radius: 50px; 
 }
+
+
 
 // 第一層router是打開/關閉選單，第二層是選哪一個page

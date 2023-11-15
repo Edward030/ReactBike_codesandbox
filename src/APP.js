@@ -1,15 +1,23 @@
 //APP.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  NavLink,
+} from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../public/styles.scss';
 //import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faX ,
+  faBars,
+  faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons';
 //import App from './App'; // 假设您的主应用程序位于App.js中
-
-
 
 const fetchData = async () => {
   const response = await fetch('https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json');
@@ -51,52 +59,105 @@ const APP = () => {
 };
 
 function MobileNav () {
+  const [isBarOpen, setIsBarOpen] = React.useState(false);
+  
+  const handleMenu = () => {
+    setIsBarOpen(!isBarOpen);
+  };
+
   return (
     <>
       <div id="mobNav">
         <div id="mobLogoSection">
           <img src="https://i.imgur.com/QAbUlXP.png" alt="logo" id="mobLogo" />
+          <div id="mobBarDiv" onClick={handleMenu}>
+            {isBarOpen ? (
+              <FontAwesomeIcon icon={faX} className="mobBar" />
+            ) : (
+              <FontAwesomeIcon icon={faBars} className="mobBar" />
+            )}
+          </div>
         </div>
-        <div id="mobNavSection">
-          <div className="mobNavDiv">
-            <Link to="/instructions" className="mobNavClass" id="instruction">
-              使用說明
-            </Link>
-          </div>
-          <div className="mobNavDiv">
-            <Link to="/charge" className="mobNavClass" id="charge">
-              收費方式
-            </Link>
-          </div>
-          <div className="mobNavDiv">
-            <Link to="/station" className="mobNavClass" id="mobStation">
-              站點資訊
-            </Link>
-          </div>
-          <div className="mobNavDiv">
-            <Link to="/news" className="mobNavClass" id="news">
-              最新消息
-            </Link>
-          </div>
-          <div className="mobNavDiv">
-            <Link to="/activity" className="mobNavClass">
-              活動專區
-            </Link>
-          </div>
-          <div id="mobLogin">
-            <Link to="/login" className="btn" id="login-text">
-              登入
-            </Link>{' '}
-          </div>
+        {isBarOpen ? mobNavSection(isBarOpen) : <StationPage />}
+      </div>
+    </>
+  );
+}
+
+function mobNavSection(isBarOpen) {
+  return (
+    <>
+      <div id="mobNavSection">
+        <div className="mobNavDiv">
+          <NavLink
+            to="/instructions"
+            activeClassName="activeRoute"
+            className="mobNavClass"
+            id="instruction"
+          >
+            使用說明
+          </NavLink>
+        </div>
+        <div className="mobNavDiv">
+          <NavLink
+            to="/charge"
+            activeClassName="activeRoute"
+            className="mobNavClass"
+            id="charge"
+          >
+            收費方式
+          </NavLink>
+        </div>
+        <div className="mobNavDiv">
+          <NavLink
+            to="/station"
+            activeClassName="activeRoute"
+            className="mobNavClass"
+            id="mobStation"
+          >
+            站點資訊
+          </NavLink>
+        </div>
+        <div className="mobNavDiv">
+          <NavLink
+            to="/news"
+            activeClassName="activeRoute"
+            className="mobNavClass"
+            id="news"
+          >
+            最新消息
+          </NavLink>
+        </div>
+        <div className="mobNavDiv">
+          <NavLink
+            to="/activity"
+            activeClassName="activeRoute"
+            className="mobNavClass"
+          >
+            活動專區
+          </NavLink>
+        </div>
+        <div id="mobLogin">
+          <NavLink
+            to="/login"
+            activeClassName="activeRoute"
+            className="btn"
+            id="login-text"
+          >
+            登入
+          </NavLink>{' '}
         </div>
       </div>
       <Routes>
-        <Route path="/instructions" element={<div>News</div>} />
-        <Route path="/charge" element={<div>News</div>} />
-        <Route path="/station" element={<StationPage />} />
-        <Route path="/news" element={<div>News</div>} />
-        <Route path="/activity" element={<div>News</div>} />
-        <Route path="/login" element={<div>News</div>} />
+        <Route
+          path="/instructions"
+          element={isBarOpen ? <></> : <div>News</div>}
+        />
+        <Route path="/charge" element={isBarOpen ? <></> : <div>News</div>} />
+        <Route path="/station" element={isBarOpen ? <></> : <StationPage />} />
+        <Route path="/news" element={isBarOpen ? <></> : <div>News</div>} />
+        <Route path="/activity" element={isBarOpen ? <></> : <div>News</div>} />
+        <Route path="/login" element={isBarOpen ? <></> : <div>News</div>} />
       </Routes>
     </>
   );
@@ -264,7 +325,7 @@ function StationPage () {
               <button class="btn btn-outline-secondary" type="button" id="button-addon2" onClick={handleSubmit}><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
           */}
-          <input type="checkbox" onChange={handleSelectAll} checked={isCheckAll}  id="checkboxAll" name="checkboxAll" /><label for="checkboxAll">全部勾選</label>
+          <input type="checkbox" onChange={handleSelectAll} checked={isCheckAll}  id="checkboxAll" name="checkboxAll" /><div for="checkboxAll" id="checkboxAllText">全部勾選</div>
           <CheckboxPanel
             checked={isCheck}
             onChange={handleCheck}
@@ -310,25 +371,18 @@ const CheckboxPanel = ({checked, onChange}) => {
   );
 }
 
-const TableComponent = ({ data, currentPage, itemsPerPage, totalPages, handleClick, filterIsInput, filterInput, filterArea }) => {
+const TableComponent = ({ data, currentPage, itemsPerPage }) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentData = data.slice(startIndex, endIndex);
   //console.log("filterIsInput: ",filterIsInput,"\n","filterInput: ",filterInput);
-  /*
-    const filteredData = filterIsInput ? 
-        data.filter(item => filterArea.includes(item.sarea) && 
-        item.sna.includes(filterInput)) :
-        data.filter(item => filterArea.includes(item.sarea));
-    const currentData = filteredData.slice(startIndex, endIndex);    
-  */
   
   const renderData = () => {
     return currentData.map((item, index) => (
       <tr key={index} >
         <td className="scity">台北市</td>
         <td className="sarea">{item.sarea}</td>
-        <td className="sna" >{item.sna}</td>
+        <td className="sna" id="sname">{item.sna}</td>
         <td className="sbi">{item.sbi}</td>
         <td className="bemp">{item.bemp}</td>
       </tr>
@@ -340,11 +394,11 @@ const TableComponent = ({ data, currentPage, itemsPerPage, totalPages, handleCli
       <table className="table table-striped">
         <thead>
           <tr>
-            <th scope="col" className="table-custom-green">縣市</th>
-            <th scope="col" className="table-custom-green">區域</th>
-            <th scope="col" className="table-custom-green">站點名稱</th>
-            <th scope="col" className="table-custom-green">可借車輛</th>
-            <th scope="col" className="table-custom-green">可選空位</th>
+            <th scope="col" className="table-custom-green scity">縣市</th>
+            <th scope="col" className="table-custom-green sarea">區域</th>
+            <th scope="col" className="table-custom-green ">站點名稱</th>
+            <th scope="col" className="table-custom-green sbi">可借車輛</th>
+            <th scope="col" className="table-custom-green bemp">可選空位</th>
           </tr>
         </thead>
         <tbody>
@@ -367,10 +421,6 @@ const renderPageNumbers = (totalPages, handleClick, currentPage) => {
   }
 
   // 開始部分
-/* if (currentPage <== ) {
-  
-}
-*/
     pageNumbers.push(
       <span
         key={1}

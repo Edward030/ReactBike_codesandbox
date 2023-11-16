@@ -22,13 +22,14 @@ $custom-grey: #F2F2F2;
   #stationSelect, #stationSearch {
     width: 80vw;
   }
-
-  #stationSelect {
-    margin-bottom: 1vh;
+  .navDiv {
+    margin-left: 10vw !important;
   }
-
-  #thSbi, #thBemp {
-    width: 50px;
+  #login {
+    margin-left: 14vw !important;
+  }
+  #checkbox-panel {
+    min-width: 358px;
   }
 }
 
@@ -63,8 +64,8 @@ body, html {
 }
 
 #navSection {
-  margin-left: 3vw;
-  flex: 1; // 填充LOGO後面剩下的寬度
+  border: 2px solid red;
+  width: 80vw;
   display: flex;
   justify-content: space-between;
   align-items: center; 
@@ -216,18 +217,7 @@ select {
 
 tr {
   text-align: center;
-  vertical-align: middle;
 }
-
-.scity,.sarea {
-  min-width: 70px;
-}
-
-.sna {
-  text-align: left;
-}
-
-
 
 .sbi, .bemp {
   color: $custom-green !important;
@@ -243,6 +233,7 @@ tr {
   margin-left: 5vw;
   margin-right: 5vw;
   width: 90vw;
+  height:300px;
   border-radius: 1em;
 }
 
@@ -284,60 +275,3 @@ span:hover {
 .page:hover {
   background-color: #E1E100;
 }
-
-//Mobile style
-
-#mobLogoSection {
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#mobLogo {
-  margin-left: 10vw;
-}
-
-.mobBar {
-  margin-right: 10vw;
-  height: 3vh;
-  width: 3vh;
-  color: $custom-darkGreen;
-}
-
-.mobBar:hover {
-  cursor: pointer;
-}
-
-#mobNavSection {
-  height: 90vh;
-  background-color: $custom-green;  
-}
-
-.mobNavDiv {
-  padding-left: 10vw;
-  padding-top: 5vh;
-}
-
-.mobNavClass {
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  font-size: 1.3rem;
-}
-
-.activeRoute {
-  text-decoration: none;
-  color: $custom-darkGreen ;
-}
-
-#mobLogin {
-  padding-left: 10vw;
-  padding-top: 32vh;
-}
-
-
-
-
-
-// 第一層router是打開/關閉選單，第二層是選哪一個page

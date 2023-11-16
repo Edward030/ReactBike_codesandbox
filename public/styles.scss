@@ -10,42 +10,42 @@ $custom-grey: #F2F2F2;
 }
 /* 手機樣式 */
 @media (max-width: 600px) {
-  /*
-  .navClass {
-    font-size: 24px;
+  #stationPic {
+    display: none;
   }
-  #nav {
-    height: 100vh !important;
+
+  #search-panel {
     display: flex;
-    flex-direction: column ; 
-    align-items: flex-start !important; 
-    border: 2px solid blue;
+    flex-direction: column;
   }
-  #logo {
-    margin-left: 10vw !important;
+
+  #stationSelect, #stationSearch {
+    width: 80vw;
   }
-  #navSection {
-    display: flex;
-    flex-direction: column ; 
-    align-items: flex-start !important; 
-    width: 100vw !important ;
-    height: 90vh;
+
+  #stationSelect {
+    margin-bottom: 1vh;
   }
-  .navDiv {
-    margin-left: 10vw !important;
+
+  #thSbi, #thBemp {
+    width: 50px;
   }
-  #login {
-    margin-left: 14vw !important;
-  }
-  #checkbox-panel {
-    min-width: 358px;
-  }
-*/
 }
 
 /* 電腦版樣式 */  
 @media (min-width: 600px)  {
+  #stationSelect {
+    width: 100px;
+  }
+
+  #stationSearch {
+      margin-left: 30px;
+      width: 350px;
+    }
   
+  #sname {
+    padding-left: 50px ;
+  }
 }
 
 body, html {
@@ -59,13 +59,12 @@ body, html {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center; 
 }
 
 #navSection {
-  border: 2px solid red;
-  width: 80vw;
+  margin-left: 3vw;
+  flex: 1; // 填充LOGO後面剩下的寬度
   display: flex;
   justify-content: space-between;
   align-items: center; 
@@ -105,21 +104,19 @@ hr.new1 {
 }
 
 #login {
-  margin-left: 15%;
-  margin-right: 10%;
-  background: $custom-green;
+  margin-left: 25%;
+  margin-right: 5%;
   border-radius: 50px;
 }
 
-#login-text {
+#login, #login-text {
+  text-decoration: none;
   color: white;
+  background-color: $custom-green ;
 }
 
 
-
 #fieldset {
-  height: 700px;
-  margin-top: -2.5vh;
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
@@ -139,15 +136,12 @@ hr.new1 {
 }
 
 #stationSelect {
-  height: 7vh;
-  width: 15vw;
+  height: 6vh;
   font-weight: bold;
 }
 
 #stationSearch {
-  margin-left: 30px;
-  height: 7vh;
-  width: 30vw;
+  height: 6vh;
 }
 
 #search, #stationSelect {
@@ -168,7 +162,7 @@ hr.new1 {
 #legend {
   color: $custom-green;
   font-weight: bold;
-  margin-top: 3vh;
+  
 }
 
 select {
@@ -177,6 +171,10 @@ select {
 
 #checkboxAll {
   margin-left: 5%;
+}
+
+#checkboxAllText {
+  width: 100px;
 }
 
 #checkbox-panel {
@@ -202,6 +200,7 @@ select {
   line-height: 2;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 3vh;
 }
 
 #checkbox-panel input {
@@ -215,12 +214,24 @@ select {
   margin-left: 5%;
 }
 
-tr, .scity  {
+tr {
   text-align: center;
+  vertical-align: middle;
 }
+
+.scity,.sarea {
+  min-width: 70px;
+}
+
+.sna {
+  text-align: left;
+}
+
+
 
 .sbi, .bemp {
   color: $custom-green !important;
+  font-weight: bold;
 }
 
 .table-custom-green {
@@ -232,12 +243,10 @@ tr, .scity  {
   margin-left: 5vw;
   margin-right: 5vw;
   width: 90vw;
-  height:300px;
   border-radius: 1em;
-  overflow: hidden;
 }
 
-.table table-striped {
+.table-striped {
   border-collapse: collapse;
 }
 
@@ -250,10 +259,7 @@ span:hover {
   cursor: pointer;
 }
 
-.sna {
-  padding-left: 50px !important;
-  text-align: left;
-}
+
 
 .pagination {
   display: flex;
@@ -278,3 +284,60 @@ span:hover {
 .page:hover {
   background-color: #E1E100;
 }
+
+//Mobile style
+
+#mobLogoSection {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#mobLogo {
+  margin-left: 10vw;
+}
+
+.mobBar {
+  margin-right: 10vw;
+  height: 3vh;
+  width: 3vh;
+  color: $custom-darkGreen;
+}
+
+.mobBar:hover {
+  cursor: pointer;
+}
+
+#mobNavSection {
+  height: 90vh;
+  background-color: $custom-green;  
+}
+
+.mobNavDiv {
+  padding-left: 10vw;
+  padding-top: 5vh;
+}
+
+.mobNavClass {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.activeRoute {
+  text-decoration: none;
+  color: $custom-darkGreen ;
+}
+
+#mobLogin {
+  padding-left: 10vw;
+  padding-top: 32vh;
+}
+
+
+
+
+
+// 第一層router是打開/關閉選單，第二層是選哪一個page

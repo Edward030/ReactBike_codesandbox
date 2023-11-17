@@ -1,0 +1,55 @@
+[33mcommit 1bf3955504f026fa8959204b9c12ff9a58e71019[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Edward <platinum91420@gmail.com>
+Date:   Fri Nov 17 09:09:00 2023 +0800
+
+    11/17 test upload by Edward
+
+[33mcommit 6941fc18623da13b0edbde6a29f5ad12ff5ecb84[m
+Merge: 08b6d81 bdb82bf
+Author: Edward <platinum91420@gmail.com>
+Date:   Thu Nov 16 17:07:12 2023 +0800
+
+    Merge branch 'master' of https://github.com/Edward030/React_bike_website
+
+[33mcommit 08b6d8121376853397bca6aec1e06446ad6c0480[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Edward <platinum91420@gmail.com>
+Date:   Thu Nov 16 17:05:48 2023 +0800
+
+    1116 edited by Edward
+
+[33mcommit bdb82bfed6a7956a976cea640bdf3eb4f9537094[m
+Author: Edward030 <platinum91420@gmail.com>
+Date:   Wed Nov 15 23:11:17 2023 +0800
+
+    1115 edited by Edward
+
+[33mcommit 21504535c0a4cee14ded12a658d6348af66e19a5[m
+Merge: 17730e2 005f154
+Author: Edward030 <platinum91420@gmail.com>
+Date:   Tue Nov 14 22:45:51 2023 +0800
+
+    1114 merge by Edward
+
+[33mcommit 17730e24c7db658352f0d82f58bc2ae7f5281f8c[m
+Author: Edward030 <platinum91420@gmail.com>
+Date:   Tue Nov 14 22:35:02 2023 +0800
+
+    1114 edited by Edward
+
+[33mcommit 005f154822e061de58adc98585fa7e5fd5eead6a[m
+Author: Edward <platinum91420@gmail.com>
+Date:   Mon Nov 13 16:49:09 2023 +0800
+
+    1113 edited by Edward
+
+[33mcommit 5b7fa9485da5cc272183a832190530e9f19daf54[m
+Author: Edward <platinum91420@gmail.com>
+Date:   Thu Nov 9 16:09:10 2023 +0800
+
+    1109 modified by Edward
+
+[33mcommit 6e90f8c79b26d4021ade63c448167a57bf7c7386[m
+Author: Edward030 <platinum91420@gmail.com>
+Date:   Wed Nov 8 17:54:17 2023 +0800
+
+    1108 webpack setting by Edward

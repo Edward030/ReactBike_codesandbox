@@ -10,6 +10,13 @@ $custom-grey: #F2F2F2;
 }
 /* 手機樣式 */
 @media (max-width: 600px) {
+  #mobLoginText {
+    text-decoration: none;
+    color: $custom-darkGreen;
+    background-color: $white ;
+    
+  }
+
   #stationPic {
     display: none;
   }
@@ -34,6 +41,12 @@ $custom-grey: #F2F2F2;
 
 /* 電腦版樣式 */  
 @media (min-width: 600px)  {
+  #login, #login-text {
+    text-decoration: none;
+    color: white;
+    background-color: $custom-green ;
+  }
+
   #stationSelect {
     width: 100px;
   }
@@ -106,13 +119,10 @@ hr.new1 {
 #login {
   margin-left: 25%;
   margin-right: 5%;
-  border-radius: 50px;
 }
 
-#login, #login-text {
-  text-decoration: none;
-  color: white;
-  background-color: $custom-green ;
+.btn {
+  border-radius: 50px;
 }
 
 
@@ -335,9 +345,5 @@ span:hover {
   padding-left: 10vw;
   padding-top: 32vh;
 }
-
-
-
-
 
 // 第一層router是打開/關閉選單，第二層是選哪一個page

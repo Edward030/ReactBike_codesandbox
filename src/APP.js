@@ -1,9 +1,19 @@
 //APP.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
-import MobileNav from './Mob.js';
-import StationPage from './page/Station.js';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons';
 import '../public/styles.scss';
+import MobileNav from './Mob';
+import StationPage from './page/Station';
+//import App from './App'; // 假设您的主应用程序位于App.js中
 const customGreen = "#B5CC22"; 
 
 
@@ -32,6 +42,7 @@ const APP = () => {
 };
 
 function Nav () {
+  
 
   return (
     <>
@@ -64,4 +75,3 @@ function Nav () {
 }
 
 export default APP;
-

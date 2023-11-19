@@ -96,6 +96,10 @@ $custom-grey: #F2F2F2;
   #thSbi, #thBemp {
     width: 50px;
   }
+
+  #thSbi, #thBemp {
+    width: 50px;
+  }
 }
 
 /* 電腦版樣式 */  
@@ -129,6 +133,8 @@ body, html {
 }
 
 #navSection {
+  margin-left: 3vw;
+  flex: 1; // 填充LOGO後面剩下的寬度
   margin-left: 3vw;
   flex: 1; // 填充LOGO後面剩下的寬度
   display: flex;
@@ -195,13 +201,13 @@ hr.new1 {
 
 .normalBtn {
   color: white;
+  background-color: $custom-green ;
 }
 
 #login-text {
   text-decoration: none;
   background-color: $custom-green ;
 }
-
 
 #fieldset {
   display: flex;

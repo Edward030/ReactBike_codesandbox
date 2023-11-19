@@ -10,6 +10,7 @@ import '../public/styles.scss';
 import MobileNav from './Mob';
 import StationPage from './pages/Station';
 //import App from './App'; // 假设您的主应用程序位于App.js中
+const customGreen = "#B5CC22"; 
 
 const APP = () => {
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 600);

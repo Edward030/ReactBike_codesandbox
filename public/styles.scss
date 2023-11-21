@@ -10,6 +10,72 @@ $custom-grey: #F2F2F2;
 }
 /* 手機樣式 */
 @media (max-width: 600px) {
+  #mobLogoSection {
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+  #mobLogo {
+    margin-left: 10vw;
+  }
+
+  .mobBar {
+    margin-right: 10vw;
+    height: 3vh;
+    width: 3vh;
+    color: $custom-darkGreen;
+  }
+
+  .mobBar:hover {
+    cursor: pointer;
+  }
+
+  #mobNavSection {
+    height: 90vh;
+    background-color: $custom-green;
+  }
+
+  .mobNavDiv {
+    padding-left: 10vw;
+    padding-top: 5vh;
+  }
+
+  .mobActiveLink,
+  .mobNormalLink {
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .mobActiveLink {
+    color: $custom-darkGreen ;
+  }
+
+  .mobNormalLink {
+    color: white;
+  }
+
+  #mobLogin {
+    padding-left: 10vw;
+    padding-top: 32vh;
+  }
+
+  .mobActiveBtn {
+    color: $custom-darkGreen ;
+  }
+
+  .mobNormalBtn {
+    color: $custom-green;
+  }
+
+  #mobLoginText {
+    text-decoration: none;
+    background-color: white;
+  }
+
   #stationPic {
     display: none;
   }
@@ -25,6 +91,10 @@ $custom-grey: #F2F2F2;
 
   #stationSelect {
     margin-bottom: 1vh;
+  }
+
+  #thSbi, #thBemp {
+    width: 50px;
   }
 
   #thSbi, #thBemp {
@@ -65,6 +135,8 @@ body, html {
 #navSection {
   margin-left: 3vw;
   flex: 1; // 填充LOGO後面剩下的寬度
+  margin-left: 3vw;
+  flex: 1; // 填充LOGO後面剩下的寬度
   display: flex;
   justify-content: space-between;
   align-items: center; 
@@ -91,30 +163,51 @@ hr.new1 {
 }
 
 .navClass {
-  color: $custom-darkGreen;
   background-color: transparent !important; // avoid .active page setting
   border: none !important;  // avoid .active page setting
+  text-decoration: none !important;
+  font-weight: bold;
+  min-width: 100px;
+}
+
+.activeLink, .normalLink {
+  background-color: transparent;
+  border: none ;
   text-decoration: none;
   font-weight: bold;
   min-width: 100px;
 }
 
-#station {
+.activeLink {
+  color: $custom-darkGreen ;
+}
+
+.normalLink {
   color: $custom-green;
 }
 
 #login {
   margin-left: 25%;
   margin-right: 5%;
+}
+
+#login-text, #mobLoginText {
   border-radius: 50px;
 }
 
-#login, #login-text {
-  text-decoration: none;
+.activeBtn {
+  color: $custom-darkGreen ;
+}
+
+.normalBtn {
   color: white;
   background-color: $custom-green ;
 }
 
+#login-text {
+  text-decoration: none;
+  background-color: $custom-green ;
+}
 
 #fieldset {
   display: flex;
@@ -284,60 +377,3 @@ span:hover {
 .page:hover {
   background-color: #E1E100;
 }
-
-//Mobile style
-
-#mobLogoSection {
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#mobLogo {
-  margin-left: 10vw;
-}
-
-.mobBar {
-  margin-right: 10vw;
-  height: 3vh;
-  width: 3vh;
-  color: $custom-darkGreen;
-}
-
-.mobBar:hover {
-  cursor: pointer;
-}
-
-#mobNavSection {
-  height: 90vh;
-  background-color: $custom-green;  
-}
-
-.mobNavDiv {
-  padding-left: 10vw;
-  padding-top: 5vh;
-}
-
-.mobNavClass {
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  font-size: 1.3rem;
-}
-
-.activeRoute {
-  text-decoration: none;
-  color: $custom-darkGreen ;
-}
-
-#mobLogin {
-  padding-left: 10vw;
-  padding-top: 32vh;
-}
-
-
-
-
-
-// 第一層router是打開/關閉選單，第二層是選哪一個page

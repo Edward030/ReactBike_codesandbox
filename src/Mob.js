@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX , faBars } from '@fortawesome/free-solid-svg-icons';
 import '../public/styles.scss';
-import StationPage from './page/Station';
+import StationPage from './pages/Station';
 
 
 export default function MobileNav () {
@@ -65,8 +65,9 @@ function mobNavSection(isBarOpen) {
         <div className="mobNavDiv">
           <NavLink
             to="/instructions"
-            activeClassName="activeRoute"
-            className="mobNavClass"
+            className={({ isActive }) =>
+              isActive ? 'mobActiveLink' : 'mobNormalLink'
+            }
             id="instruction"
           >
             使用說明
@@ -75,8 +76,9 @@ function mobNavSection(isBarOpen) {
         <div className="mobNavDiv">
           <NavLink
             to="/charge"
-            activeClassName="activeRoute"
-            className="mobNavClass"
+            className={({ isActive }) =>
+              isActive ? 'mobActiveLink' : 'mobNormalLink'
+            }
             id="charge"
           >
             收費方式
@@ -85,8 +87,9 @@ function mobNavSection(isBarOpen) {
         <div className="mobNavDiv">
           <NavLink
             to="/station"
-            activeClassName="activeRoute"
-            className="mobNavClass"
+            className={({ isActive }) =>
+              isActive ? 'mobActiveLink' : 'mobNormalLink'
+            }
             id="mobStation"
           >
             站點資訊
@@ -95,8 +98,9 @@ function mobNavSection(isBarOpen) {
         <div className="mobNavDiv">
           <NavLink
             to="/news"
-            activeClassName="activeRoute"
-            className="mobNavClass"
+            className={({ isActive }) =>
+              isActive ? 'mobActiveLink' : 'mobNormalLink'
+            }
             id="news"
           >
             最新消息
@@ -105,8 +109,9 @@ function mobNavSection(isBarOpen) {
         <div className="mobNavDiv">
           <NavLink
             to="/activity"
-            activeClassName="activeRoute"
-            className="mobNavClass"
+            className={({ isActive }) =>
+              isActive ? 'mobActiveLink' : 'mobNormalLink'
+            }
           >
             活動專區
           </NavLink>
@@ -114,8 +119,9 @@ function mobNavSection(isBarOpen) {
         <div id="mobLogin">
           <NavLink
             to="/login"
-            activeClassName="activeRoute"
-            className="btn"
+            className={({ isActive }) =>
+              isActive ? 'btn mobActiveBtn' : 'btn mobNormalBtn'
+            }
             id="mobLoginText"
           >
             登入
@@ -123,12 +129,12 @@ function mobNavSection(isBarOpen) {
         </div>
       </div>
       <Routes>
-        <Route path="/instructions"/>  {/* 不放element即可 */ }
-        <Route path="/charge"  />
-        <Route path="/station"  />
-        <Route path="/news"  />
-        <Route path="/activity"  />
-        <Route path="/login"  />
+        <Route path="/instructions" /> {/* 不放element即可 */}
+        <Route path="/charge" />
+        <Route path="/station" />
+        <Route path="/news" />
+        <Route path="/activity" />
+        <Route path="/login" />
       </Routes>
     </>
   );

@@ -81,7 +81,6 @@ $custom-grey: #F2F2F2;
   }
 
   #search-panel {
-    display: flex;
     flex-direction: column;
   }
 
@@ -103,12 +102,13 @@ $custom-grey: #F2F2F2;
   #stationSelect {
     width: 100px;
   }
-
+  #search-panel {
+    flex-direction: row;
+  }
   #stationSearch {
       margin-left: 30px;
       width: 350px;
     }
-  
   #sname {
     padding-left: 50px ;
   }
@@ -167,24 +167,12 @@ hr.new1 {
 .activeLink, .normalLink {
   background-color: transparent;
   border: none ;
-  text-decoration: none !important;
-  font-weight: bold;
-  min-width: 100px;
-}
-
-.activeLink, .normalLink {
-  background-color: transparent;
-  border: none ;
   text-decoration: none;
   font-weight: bold;
   min-width: 100px;
 }
 
 .activeLink {
-  color: $custom-darkGreen ;
-}
-
-.normalLink .activeLink {
   color: $custom-darkGreen ;
 }
 
@@ -202,10 +190,6 @@ hr.new1 {
 }
 
 .activeBtn {
-  color: $custom-darkGreen ;
-}
-
-.normalBtn .activeBtn {
   color: $custom-darkGreen ;
 }
 
@@ -228,6 +212,10 @@ hr.new1 {
 #legend, #search-panel,#mid-panel {
   width: 100%;
   margin-left: 5%;
+}
+
+#search-panel {
+  display: flex;
 }
 
 .option {
@@ -376,4 +364,3 @@ span:hover {
 .page:hover {
   background-color: #E1E100;
 }
-

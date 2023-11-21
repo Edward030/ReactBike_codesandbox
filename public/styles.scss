@@ -100,6 +100,10 @@ $custom-grey: #F2F2F2;
   #thSbi, #thBemp {
     width: 50px;
   }
+
+  #thSbi, #thBemp {
+    width: 50px;
+  }
 }
 
 /* 電腦版樣式 */  
@@ -133,6 +137,8 @@ body, html {
 }
 
 #navSection {
+  margin-left: 3vw;
+  flex: 1; // 填充LOGO後面剩下的寬度
   margin-left: 3vw;
   flex: 1; // 填充LOGO後面剩下的寬度
   margin-left: 3vw;
@@ -173,11 +179,24 @@ hr.new1 {
 .activeLink, .normalLink {
   background-color: transparent;
   border: none ;
+  text-decoration: none !important;
+  font-weight: bold;
+  min-width: 100px;
+}
+
+.activeLink, .normalLink {
+  background-color: transparent;
+  border: none ;
   text-decoration: none;
   font-weight: bold;
   min-width: 100px;
 }
 
+.activeLink {
+  color: $custom-darkGreen ;
+}
+
+.normalLink {
 .activeLink {
   color: $custom-darkGreen ;
 }
@@ -192,9 +211,17 @@ hr.new1 {
 }
 
 #login-text, #mobLoginText {
+}
+
+.btn {
   border-radius: 50px;
 }
 
+.activeBtn {
+  color: $custom-darkGreen ;
+}
+
+.normalBtn {
 .activeBtn {
   color: $custom-darkGreen ;
 }
@@ -204,6 +231,10 @@ hr.new1 {
   background-color: $custom-green ;
 }
 
+#login-text {
+  text-decoration: none;
+  background-color: $custom-green ;
+}
 #login-text {
   text-decoration: none;
   background-color: $custom-green ;

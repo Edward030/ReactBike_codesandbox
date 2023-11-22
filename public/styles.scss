@@ -9,7 +9,7 @@ $custom-grey: #F2F2F2;
   box-sizing: border-box;
 }
 /* 手機樣式 */
-@media (max-width: 600px) {
+@media (max-width: 708px) {
   #mobLogoSection {
       height: 10vh;
       display: flex;
@@ -98,7 +98,7 @@ $custom-grey: #F2F2F2;
 }
 
 /* 電腦版樣式 */  
-@media (min-width: 600px)  {
+@media (min-width: 708px)  {
   #stationSelect {
     width: 100px;
   }

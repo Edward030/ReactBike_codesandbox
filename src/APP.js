@@ -13,11 +13,11 @@ import StationPage from './pages/Station';
 const customGreen = "#B5CC22"; 
 
 const APP = () => {
-  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 600);
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 708);
 
   React.useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
+      setIsMobile(window.innerWidth <= 708);
     };
 
     window.addEventListener('resize', handleResize);

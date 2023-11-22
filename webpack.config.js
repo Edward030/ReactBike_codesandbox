@@ -51,5 +51,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: './public/styles.scss',
     }),
-  ]
+  ],
+  devServer: {
+		port: 3000,
+    historyApiFallback: true,
+	},
 };
